@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "eventum-server"
+version = "1.0.0"
+description = "Server application to run and manage Eventum instances using REST API"
+license = "Apache-2.0"
+authors = ["Nikita Reznikov <nikita.reznikov.public@mail.ru>"]
+readme = "README.md"
+repository = "https://github.com/Eventum-Generatives/EventumServer"
+documentation = "https://eventum-generatives.github.io/Website/"
+keywords = ["API"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3"
+]
+packages = [
+    {include = "eventum_server"},
+    {include = "eventum_server/py.typed"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+mypy = "^1.9.0"
+pytest = "^8.2.1"
+flake8 = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+eventum-server = "eventum_server.__main__:main"
